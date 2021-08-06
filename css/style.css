@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+if html body {
+  height: 100%;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.gradient {
+  background: #f2bc80;
+  background: linear-gradient(146deg, #f2bc80 41%, #732002 100%);
+}
+
+.page-header {
+  margin-top: 4rem;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.icon {
+  color: #fff;
+  height: 5rem;
+  width: 5rem;
+  font-size: 1.75rem;
+  border-radius: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.galeria {
+  background-color: whitesmoke;
+}
+.galeria img {
+  border-radius: 5%;
+}
+
+.servicios img {
+  border-radius: 5%;
+}
+
+footer {
+  color: #fff3cd;
+  font-size: 1rem;
+  margin: 0;
+  padding: 1rem;
+}
+footer p {
+  color: #1a1e21;
+}
+
+/*# sourceMappingURL=style.css.map */
