@@ -5,14 +5,15 @@ class Servicio {
         this.precio = precio;
     }
     presupuestar(){
-        console.log("Usted ha presupuestado" + this.tipo)
+        return precioTotal
     }
 }
-const servicios = [];
-function ingresarServicio(){
 
-    let continuar = 1;
+const servicios = [];
+
+function ingresarServicio(){
     let cuenta = 0;
+    let continuar = 1;
     while (continuar === 1){
         let servicio = parseInt(prompt("Ingrese servicio a cotizar, 1. Ilustracion , 2. Asesoria , 3. Creacion de contenido" +
             ", 4. Branding"));
@@ -26,7 +27,7 @@ function ingresarServicio(){
                 cuenta = cuenta + 10000;
                 break;
             case 3:
-                servicios.push(new Servicio("CreacionContenido", "1", "8000"));
+                servicios.push(new Servicio("Creacion de Contenido", "1", "8000"));
                 cuenta = cuenta + 8000;
                 break;
             case 4:
@@ -36,16 +37,17 @@ function ingresarServicio(){
         continuar = parseInt(prompt("¿Desea seguir ingresando? 1. SI , 2. NO"));
 
         if (continuar === 2){
-            return servicios;
+            return cuenta;
         }
         else {
             continuar = 1;
         }
     }
 }
+let cuentaFinal = ingresarServicio()
+let total = JSON.stringify(servicios);
 
-let total = ingresarServicio()
-alert(total.toString());
+alert("Sus serficios seleccionados son: \n " + total + " \n y el total sera: \n" +cuentaFinal)
 
 
 
