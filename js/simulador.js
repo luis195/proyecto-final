@@ -46,8 +46,20 @@ function ingresarServicio(){
 }
 let cuentaFinal = ingresarServicio()
 let total = JSON.stringify(servicios);
+let listaServicios = JSON.parse(total)
+for (let i in listaServicios){
 
-alert("Sus serficios seleccionados son: \n " + total + " \n y el total sera: \n" +cuentaFinal)
+    let tipoServicio = document.createTextNode(listaServicios[i].tipo)
+    let nodo= document.createElement("li")
+    nodo.className = "list-group-item"
+    nodo.appendChild(tipoServicio)
+    document.getElementById("lista").appendChild(nodo);
+
+}
+
+
+
+alert("Sus serficios seleccionados son: \n " + total + " \n y el total sera: \n" +cuentaFinal);
 
 
 
