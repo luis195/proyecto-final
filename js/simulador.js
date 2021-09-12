@@ -1,3 +1,4 @@
+
 class Servicio {
     constructor(tipo, cantidad, precio) {
         this.tipo = tipo;
@@ -5,42 +6,25 @@ class Servicio {
         this.precio = precio;
     }
 }
-/*
+
 const servicios = [];
 
 function ingresarServicio(){
-    let cuenta = 0;
-    let continuar = 1;
-    while (continuar === 1){
-        let servicio = parseInt(prompt("Ingrese servicio a cotizar, 1. Ilustracion , 2. Asesoria , 3. Creacion de contenido" +
-            ", 4. Branding"));
-        switch (servicio){
+        switch (valorServicio){
             case 1:
                 servicios.push(new Servicio("Ilustracion", "1", "20000"));
-                cuenta = cuenta + 20000;
                 break;
             case 2:
                 servicios.push(new Servicio("Asesoria", "1", "10000"));
-                cuenta = cuenta + 10000;
                 break;
             case 3:
                 servicios.push(new Servicio("Creacion de Contenido", "1", "8000"));
-                cuenta = cuenta + 8000;
                 break;
             case 4:
                 servicios.push(new Servicio("Branding", "1", "13000"))
-                cuenta = cuenta + 13000;
         }
-        continuar = parseInt(prompt("¿Desea seguir ingresando? 1. SI , 2. NO"));
-
-        if (continuar === 2){
-            return cuenta;
-        }
-        else {
-            continuar = 1;
-        }
-    }
 }
+/*
 let cuentaFinal = ingresarServicio()
 let total = JSON.stringify(servicios);
 let listaServicios = JSON.parse(total)
@@ -58,14 +42,43 @@ for (let i in listaServicios){
 
 alert("Sus serficios seleccionados son: \n " + total + " \n y el total sera: \n" +cuentaFinal);
 
-*/
 
-let opcion = document.getElementById("ilustracionLista");
-opcion.addEventListener("select", campoSeleccion);
-function campoSeleccion(){
-    let texto = document.getElementById("campoServicio");
 
-}
 
+
+}*/
+//$("#listaServicios").onchange(
+let listaServicios = document.getElementById("listaServicios");
+let agregar = document.getElementById("agregar")
+
+    function escogerServcio() {
+        let valorServicio = listaServicios.value;
+        // encontrar el textbox
+        let textBox = document.getElementById("campoServicio");
+        //console.log(valorServicio)
+        switch (valorServicio) {
+            case "1":
+                textBox.value = "Ilustracion";
+                break;
+
+            case "2":
+                textBox.value = "Asesoria";
+                break;
+
+            case "3":
+                textBox.value = "Creacion de Contenido";
+                break;
+
+            case "4":
+                textBox.value = "Branding";
+
+        }
+
+        //agregar.addEventListener("click", ingresarServicio)
+        console.log(servicios)
+    }
+listaServicios.onchange = escogerServcio;
+escogerServcio();
+//)
 
 

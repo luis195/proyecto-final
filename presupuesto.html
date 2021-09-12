@@ -72,18 +72,18 @@
                             <h3>Calculadora de Presupuesto</h3>
                             <!--LISTA DEPLEGABLE PARA APLICAR LA CALCULADORA DE SERVICIOS-->
                             <div class="input-group mb-3">
-                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Selecciona un Servicio</button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#" id="ilustracionLista">Ilustracion</a></li>
-                                    <li><a class="dropdown-item" href="#" id="asesoriaLista">Asesoria</a></li>
-                                    <li><a class="dropdown-item" href="#" id="creacionLista">Creacion de Contenido</a></li>
-                                    <li><a class="dropdown-item" href="#" id="brandingLista">Branding</a></li>
-                                </ul>
+                                <select id="listaServicios"  class="form-select" aria-label="Default select example">
+                                    <option selected>Escoja su servicio</option>
+                                    <option value="1">Ilustracion</option>
+                                    <option value="2">Asesoria</option>
+                                    <option value="3">Creacion de Contenido</option>
+                                    <option value="4">Branding</option>
+                                </select>
                                 <input id="campoServicio" type="text" class="form-control" aria-label="Text input with dropdown button">
                             </div>
                             <div>
-                                <button type="button" class="btn btn-outline-secondary">Agregar</button>
-                                <button type="button" class="btn btn-outline-secondary">Calcular</button>
+                                <button id="agregar" type="button" class="btn btn-outline-secondary">Agregar</button>
+                                <button id="calcular" type="button" class="btn btn-outline-secondary">Calcular</button>
                             </div>
                         </div>
                         <div class="col-md-5 ">
@@ -92,6 +92,7 @@
                     </div>
                 </div>
             </section>
+
         </main>
 
         <footer class="gradient">
