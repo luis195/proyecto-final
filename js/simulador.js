@@ -4,11 +4,8 @@ class Servicio {
         this.cantidad = cantidad;
         this.precio = precio;
     }
-    presupuestar(){
-        return precioTotal
-    }
 }
-
+/*
 const servicios = [];
 
 function ingresarServicio(){
@@ -61,7 +58,14 @@ for (let i in listaServicios){
 
 alert("Sus serficios seleccionados son: \n " + total + " \n y el total sera: \n" +cuentaFinal);
 
+*/
 
+let opcion = document.getElementById("ilustracionLista");
+opcion.addEventListener("select", campoSeleccion);
+function campoSeleccion(){
+    let texto = document.getElementById("campoServicio");
+
+}
 
 
 
