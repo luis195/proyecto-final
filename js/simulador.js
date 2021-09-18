@@ -1,26 +1,3 @@
-/*
-let cuentaFinal = ingresarServicio()
-let total = JSON.stringify(servicios);
-let listaServicios = JSON.parse(total)
-for (let i in listaServicios){
-
-    let tipoServicio = document.createTextNode(listaServicios[i].tipo)
-    let nodo= document.createElement("li")
-    nodo.className = "list-group-item"
-    nodo.appendChild(tipoServicio)
-    document.getElementById("lista").appendChild(nodo);
-
-}
-
-
-
-alert("Sus serficios seleccionados son: \n " + total + " \n y el total sera: \n" +cuentaFinal);
-
-
-
-
-
-}*/
 class Servicio {
     constructor(tipo, cantidad, precio) {
         this.tipo = tipo;
@@ -30,10 +7,12 @@ class Servicio {
 }
 
 const servicios = [];
-let calculo;
 let listaServicios = document.getElementById("listaServicios");
 let agregar = document.getElementById("agregar")
 let cuenta = document.getElementById("calcular")
+let total = 0;
+
+
 
 function ingresarServicio(){
         switch (listaServicios.value){
@@ -77,14 +56,48 @@ function escogerServicio() {
     }
 
     agregar.onclick = ingresarServicio
-    console.log(servicios)
 }
 
-function calculoTarifa(){
-    for (let i in servicios){
-        cuenta = servicios[i]["cuenta"]
-    }
-}
 listaServicios.onchange = escogerServicio;
+cuenta.onclick = function calculoTarifa(){
+
+    for (let i in servicios){
+        total = parseInt(servicios[i].precio) + total;
+    }
+    if (total !== 0){
+
+        $("#tabla").append("<table class=\"table\">\n" +
+            "  <thead>\n" +
+            "    <tr>\n" +
+            "      <th scope=\"col\">#</th>\n" +
+            "      <th scope=\"col\">Servicio</th>\n" +
+            "      <th scope=\"col\">Monto</th>\n" +
+            "      <th scope=\"col\">Precio</th>\n" +
+            "    </tr>\n" +
+            "  </thead>\n" +
+            "  <tbody>\n" +
+            "  </tbody>\n" +
+            "</table>")
+
+        for (let i in servicios){
+            $("#tabla").find("tbody").append("<tr>\n" +
+                "      <th scope=\"row\">"+(i)+"</th>\n" +
+                "      <td>"+(servicios[i].tipo)+"</td>\n" +
+                "      <td>"+servicios[i].cantidad+"</td>\n" +
+                "      <td>"+servicios[i].precio+"</td>\n" +
+                "    </tr>\n")
+        }
+        $("#tabla").find("tbody").append("<tr>\n" +
+            "      <th scope=\"row\">Total</th>\n" +
+            "      <td></td>\n" +
+            "      <td></td>\n" +
+            "      <td>"+total+"</td>\n" +
+            "    </tr>\n")
+
+    }
+    return total;
+}; //No se por que me funciona de esta forma y no como lo venia implementando
+
+
 
 
