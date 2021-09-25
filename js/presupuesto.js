@@ -11,24 +11,30 @@ let listaServicios = document.getElementById("listaServicios");
 let agregar = document.getElementById("agregar")
 let cuenta = document.getElementById("calcular")
 let total = 0;
-
+$("#nombre").val();
+$("#email").val();
+$("#mensaje").val();
+$("#body").fadeIn("slow")
+$("#presupuesto").fadeIn("slow")
+$("#imagen").fadeIn("slow")
+$("#caculadora").fadeIn("slow")
 
 
 function ingresarServicio(){
-        switch (listaServicios.value){
-            case "1":
-                servicios.push(new Servicio("Ilustracion", "1", "20000"));
-                break;
-            case "2":
-                servicios.push(new Servicio("Asesoria", "1", "10000"));
-                break;
-            case "3":
-                servicios.push(new Servicio("Creacion de Contenido", "1", "8000"));
-                break;
-            case "4":
-                servicios.push(new Servicio("Branding", "1", "13000"))
-        }
-        return servicios
+    switch (listaServicios.value){
+        case "1":
+            servicios.push(new Servicio("Ilustracion", "1", "20000"));
+            break;
+        case "2":
+            servicios.push(new Servicio("Asesoria", "1", "10000"));
+            break;
+        case "3":
+            servicios.push(new Servicio("Creacion de Contenido", "1", "8000"));
+            break;
+        case "4":
+            servicios.push(new Servicio("Branding", "1", "13000"))
+    }
+    return servicios
 }
 
 // se encarga de manejar el evento de las listas
@@ -66,7 +72,7 @@ cuenta.onclick = function calculoTarifa(){
     }
     if (total !== 0){
 
-        $("#tabla").append("<table class=\"table\">\n" +
+        $("#tabla").append("<table  class=\"table\">\n" +
             "  <thead>\n" +
             "    <tr>\n" +
             "      <th scope=\"col\">#</th>\n" +
@@ -97,7 +103,3 @@ cuenta.onclick = function calculoTarifa(){
     }
     return total;
 }; //No se por que me funciona de esta forma y no como lo venia implementando
-
-
-
-
