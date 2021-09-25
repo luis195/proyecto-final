@@ -105,15 +105,20 @@
                         <div class="col-md-5">
                             <h2>Contacto</h2>
                             <div class="mb-3">
-                                <label for="formulario" class="form-label">Direccion de Email</label>
-                                <input type="email" class="form-control" id="formulario" placeholder="nombre@dominio.com">
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input id="nombre" type="nombre" class="form-control" id="nombre" placeholder="nombre">
+                                </div>
+                                <label for="email" class="form-label">Direccion de Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="nombre@dominio.com">
                             </div>
+
                             <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <label for="mensaje" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="mensaje" rows="3"></textarea>
                             </div>
                             <button
-                                    type="button" class="btn btn-secondary">Enviar
+                                    type="button" class="btn btn-secondary" id="btnEnviar">Enviar
                             </button>
                         </div>
                         <div class="col-md-5 ">
