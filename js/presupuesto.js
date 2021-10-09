@@ -6,10 +6,12 @@ class Servicio {
     }
 }
 
-const servicios = [];
+let servicios = [];
 let listaServicios = document.getElementById("listaServicios");
 let agregar = document.getElementById("agregar")
 let cuenta = document.getElementById("calcular")
+let tablasInsertada = document.getElementById("tablaInsertada")
+let reiniciar = document.getElementById("reiniciar")
 let total = 0;
 $("#nombre").val();
 $("#email").val();
@@ -60,7 +62,6 @@ function escogerServicio() {
             textBox.value = "Branding";
 
     }
-
     agregar.onclick = ingresarServicio
 }
 
@@ -70,9 +71,15 @@ cuenta.onclick = function calculoTarifa(){
     for (let i in servicios){
         total = parseInt(servicios[i].precio) + total;
     }
+    let cantidadFilasTabla = $('#tablaInsertada tr').length;
+    if (cantidadFilasTabla > 0){
+        $("#tablaInsertada").remove();
+        total = 0;
+    }
+
     if (total !== 0){
 
-        $("#tabla").append("<table  class=\"table\">\n" +
+        $("#tabla").append("<table id='tablaInsertada' class=\"table\">\n" +
             "  <thead>\n" +
             "    <tr>\n" +
             "      <th scope=\"col\">#</th>\n" +
@@ -100,6 +107,14 @@ cuenta.onclick = function calculoTarifa(){
             "      <td>"+total+"</td>\n" +
             "    </tr>\n")
 
-    }
+        }
+
+
     return total;
 }; //No se por que me funciona de esta forma y no como lo venia implementando
+reiniciar.onclick = function (){
+    servicios = [];
+    $("#tablaInsertada").remove();
+    total = 0;
+}
+
